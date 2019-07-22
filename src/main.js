@@ -12,6 +12,9 @@ const store = new Vuex.Store({
     mutations: {
         addItem(state, item) {
             state.items.push(item);
+        },
+        change(state, item) {
+            state.items.splice(item.id, 1, item);
         }
     }
 })

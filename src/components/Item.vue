@@ -1,7 +1,7 @@
 <template>
     <div id="item">
         <input type="checkbox" class="done-todo" v-model="item.isChecked" />
-        <span>{{ item.content }}</span>
+        <span :class="{checked: item.isChecked}">{{ item.content }}</span>
     </div>
 </template>
 
