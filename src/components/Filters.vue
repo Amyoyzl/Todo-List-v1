@@ -2,7 +2,7 @@
   <div id="filters">
     <ul id="filters">
       <li v-for="method in filterMethods" :key="method">
-        <v-filter-button :method="method"/>
+        <v-filter-button :method="method" />
       </li>
     </ul>
   </div>
@@ -15,10 +15,10 @@ export default {
   components: {
     "v-filter-button": FilterButton
   },
-  data() {
-    return {
-      filterMethods: ["All", "Active", "Complete"]
-    };
+  computed: {
+    filterMethods() {
+      return this.$store.state.filterMethods;
+    }
   }
 };
 </script>

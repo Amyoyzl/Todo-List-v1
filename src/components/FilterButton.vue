@@ -1,10 +1,15 @@
 <template>
-  <a>{{ method }}</a>
+  <a @click="filter(method)">{{ method }}</a>
 </template>
 
 <script>
 export default {
   name: "filterButton",
-  props: ["method"]
+  props: ["method"],
+  methods: {
+    filter(method) {
+      this.$store.commit("filter", method);
+    }
+  }
 };
 </script>

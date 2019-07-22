@@ -2,7 +2,7 @@
   <div id="item-list">
     <ol>
       <i style="display: none"></i>
-      <li v-for="item in items" :key="item.id">
+      <li v-for="item in showItems" :key="item.id">
         <v-item :item="item"/>
       </li>
     </ol>
@@ -17,8 +17,8 @@ export default {
     "v-item": Item
   },
   computed: {
-    items() {
-      return this.$store.state.items;
+    showItems() {
+      return this.$store.state.showItems;
     }
   }
 };
