@@ -1,6 +1,6 @@
 <template>
   <div id="addItem">
-    <input class="input-text" type="text" v-model="itemContent" />
+    <input class="input-text" type="text" v-model="itemContent" @keydown="addItem" />
     <div id="button" @click="add">Add</div>
   </div>
 </template>
@@ -25,7 +25,12 @@ export default {
         this.$store.commit("addItem", item);
         this.itemContent = "";
       } else {
-          alert("nothing add");
+        alert("nothing add");
+      }
+    },
+    addItem() {
+      if (event.keyCode == 13) {
+        this.add();
       }
     }
   }
