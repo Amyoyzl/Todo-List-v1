@@ -16,6 +16,10 @@ const store = new Vuex.Store({
             state.items.push(item);
             state.showItems.push(item);
         },
+        deleteItem(state, item) {
+            state.items.splice(state.items.indexOf(item), 1);
+            state.showItems.splice(state.showItems.indexOf(item), 1);
+        },
         change(state, item) {
             state.items.splice(item.id, 1, item);
             state.showItems.splice(item.id, 1, item);

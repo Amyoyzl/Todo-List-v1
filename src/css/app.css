@@ -107,3 +107,12 @@ li:hover {
 input[type=checkbox].done-todo {
     margin: 5px 5px 2px 0;
 }
+
+ol li .delete-btn {
+    float: right;
+    color: white;
+    border-radius: 5px;
+    background: black;
+    height: 30px;
+    margin-top: -4px;
+}

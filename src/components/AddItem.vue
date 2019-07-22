@@ -1,6 +1,6 @@
 <template>
   <div id="addItem">
-    <input class="input-text" type="text" v-model="itemContent" @keydown="addItem" />
+    <input class="input-text" type="text" v-model="itemContent" @keydown.enter="add" />
     <div id="button" @click="add">Add</div>
   </div>
 </template>
@@ -26,11 +26,6 @@ export default {
         this.itemContent = "";
       } else {
         alert("nothing add");
-      }
-    },
-    addItem() {
-      if (event.keyCode == 13) {
-        this.add();
       }
     }
   }
