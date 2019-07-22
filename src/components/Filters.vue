@@ -11,7 +11,7 @@
 <script>
 import FilterButton from "./FilterButton";
 export default {
-  name: "filter",
+  name: "filters",
   components: {
     "v-filter-button": FilterButton
   },
