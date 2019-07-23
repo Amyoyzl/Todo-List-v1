@@ -1,13 +1,27 @@
 <template>
-    <div id="main">
-        <button class="btn">开始使用</button>
-        <br><br><br>
-        请输入姓名：<input type="text">
-    </div>
+  <div id="main">
+      请输入姓名：
+    <input type="text" v-model="userName" />
+    <br />
+    <br />
+    <br />
+    <button class="btn" @click="toHome">开始使用</button>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'Main'
-}
+  name: "Main",
+  data() {
+      return {
+          userName: ''
+      }
+  },
+  methods: {
+      toHome() {
+          this.$store.commit('setUser', this.userName);
+          this.$router.push("/home");
+      }
+  }
+};
 </script>

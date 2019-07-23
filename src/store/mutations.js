@@ -7,6 +7,9 @@ const mutations = {
     },
     loadItems: (state, items) => {
         state.items = items;
+    },
+    setUser: (state, user) => {
+        state.user = user;
     }
 }
 

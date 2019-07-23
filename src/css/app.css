@@ -121,6 +121,10 @@ ol li .delete-btn {
     text-align: center;
 }
 
+#home {
+    margin: 0 20%;
+}
+
 .btn {
     display: inline-block;
     background-color: #fc999b;
@@ -135,4 +139,16 @@ ol li .delete-btn {
 .button:hover {
     cursor: pointer;
     opacity: .8;
+}
+
+#user {
+    float: right;
+}
+
+#content {
+    margin-top: 40px;
+}
+
+#content ul {
+    padding: 0
 }
