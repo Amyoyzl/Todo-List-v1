@@ -15,10 +15,10 @@ export default {
   components: {
     "v-filter-button": FilterButton
   },
-  computed: {
-    filterMethods() {
-      return this.$store.state.filterMethods;
+  data() {
+    return {
+      filterMethods: ['All', 'Active', 'Complete']
     }
-  }
+  },
 };
 </script>

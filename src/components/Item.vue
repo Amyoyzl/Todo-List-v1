@@ -1,6 +1,6 @@
 <template>
   <div id="item">
-    <input type="checkbox" class="done-todo" v-model="item.isChecked" />
+    <input type="checkbox" class="done-todo" :value="item.isChecked" @input="check($event.target.checked)" />
     <span
       :class="{checked: item.isChecked}"
       @dblclick="editable=true"
@@ -27,7 +27,11 @@ export default {
       this.item.content = this.$refs.info.innerHTML;
     },
     deleteItem() {
-        this.$store.commit('deleteItem', item);
+      this.$store.commit("deleteItem", this.item);
+    },
+    check(checked) {
+      const newItem = Object.assign({}, this.item, { isChecked: checked })
+      this.$store.commit("updateItem", newItem);
     }
   }
 };
