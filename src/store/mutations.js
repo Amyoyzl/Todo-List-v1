@@ -1,4 +1,4 @@
-export default {
+const mutations = {
     addItem: (state, item) => {
         state.items.push(item);
     },
@@ -13,5 +13,10 @@ export default {
     },
     updateItem: (state, item) => {
         state.items.splice(state.items.map(e => e.id).indexOf(item.id), 1, item);
+    },
+    loadItems: (state, items) => {
+        state.items = items;
     }
 }
+
+export default mutations;

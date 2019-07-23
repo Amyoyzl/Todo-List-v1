@@ -10,19 +10,17 @@ export default {
   name: "AddItem",
   data() {
     return {
-      itemContent: "",
-      len: 0
+      itemContent: ""
     };
   },
   methods: {
     add() {
       if (this.itemContent.length > 0) {
         let item = {
-          id: this.len++,
           isChecked: false,
           content: this.itemContent
         };
-        this.$store.commit("addItem", item);
+        this.$store.dispatch('addTodos', item);
         this.itemContent = "";
       } else {
         alert("nothing add");

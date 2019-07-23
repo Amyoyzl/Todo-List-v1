@@ -1,6 +1,6 @@
 <template>
   <div id="item">
-    <input type="checkbox" class="done-todo" :value="item.isChecked" @input="check($event.target.checked)" />
+    <input type="checkbox" class="done-todo" :checked="item.isChecked" @input="check($event.target.checked)" />
     <span
       :class="{checked: item.isChecked}"
       @dblclick="editable=true"
