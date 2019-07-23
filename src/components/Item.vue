@@ -27,11 +27,13 @@ export default {
       this.item.content = this.$refs.info.innerHTML;
     },
     deleteItem() {
-      this.$store.commit("deleteItem", this.item);
+      this.$store.dispatch('deleteTodo', this.item.id);
     },
     check(checked) {
-      const newItem = Object.assign({}, this.item, { isChecked: checked })
-      this.$store.commit("updateItem", newItem);
+      const newItem = Object.assign(this.item);
+      // const newItem = Object.assign({}, this.item, { isChecked: checked })
+      newItem.isChecked = checked;
+      this.$store.dispatch('updateTodo', newItem);
     }
   }
 };
