@@ -2,7 +2,7 @@
   <div id="home">
     <div>
       <button @click="toMain">返回</button>
-      <span id="user">{{ user }}</span>
+      <span id="user">{{ $store.getters.user }}</span>
     </div>
     <dir id="content">
       <ul id="left">
@@ -10,7 +10,7 @@
           <router-link to="/todoList">TodoList</router-link>
         </li>
         <li>
-          <router-link to>我的</router-link>
+          <router-link to="/mine">我的</router-link>
         </li>
       </ul>
       <div id="right">
@@ -30,11 +30,6 @@ export default {
         this.$router.push("/");
       }
     }
-  },
-  computed: {
-      user() {
-          return this.$store.getters.user;
-      }
   }
 };
 </script>

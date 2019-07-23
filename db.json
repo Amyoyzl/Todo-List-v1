@@ -12,11 +12,11 @@
     },
     {
       "id": 3,
-      "isChecked": false,
+      "isChecked": true,
       "content": "33"
     },
     {
-      "isChecked": false,
+      "isChecked": true,
       "content": "44",
       "id": 4
     },

@@ -152,3 +152,18 @@ ol li .delete-btn {
 #content ul {
     padding: 0
 }
+
+#left {
+    width: 35%;
+    float: left;
+}
+
+#right {
+    width: 65%;
+    float: right;
+}
+
+#head {
+    width: 100px;
+    height: 100px;
+}
