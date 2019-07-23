@@ -16,14 +16,9 @@
       "content": "33"
     },
     {
-      "isChecked": true,
+      "isChecked": false,
       "content": "44",
       "id": 4
-    },
-    {
-      "isChecked": false,
-      "content": "55",
-      "id": 5
     }
   ]
 }

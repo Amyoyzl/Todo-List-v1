@@ -1,11 +1,12 @@
 <template>
-  <div id="main">
-      请输入姓名：
-    <input type="text" v-model="userName" />
-    <br />
-    <br />
-    <br />
-    <button class="btn" @click="toHome">开始使用</button>
+  <div class="container">
+    <div class="input-group mb-3 w-50">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon3">请输入姓名：</span>
+      </div>
+      <input type="text" class="form-control" v-model="userName" />
+    </div>
+    <button class="btn btn-success btn-sm" @click="toHome">开始使用</button>
   </div>
 </template>
 
@@ -13,15 +14,15 @@
 export default {
   name: "Main",
   data() {
-      return {
-          userName: ''
-      }
+    return {
+      userName: ""
+    };
   },
   methods: {
-      toHome() {
-          this.$store.commit('setUser', this.userName);
-          this.$router.push("/home");
-      }
+    toHome() {
+      this.$store.commit("setUser", this.userName);
+      this.$router.push("/home");
+    }
   }
 };
 </script>

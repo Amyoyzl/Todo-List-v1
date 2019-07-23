@@ -13,9 +13,6 @@ body {
 
 #todo-list {
     padding: 20px;
-    width: 400px;
-    margin: 0 auto;
-    margin-top: 40px;
     background: white;
     border-radius: 5px;
 }
@@ -115,55 +112,4 @@ ol li .delete-btn {
     background: black;
     height: 30px;
     margin-top: -4px;
-}
-
-#main {
-    text-align: center;
-}
-
-#home {
-    margin: 0 20%;
-}
-
-.btn {
-    display: inline-block;
-    background-color: #fc999b;
-    color: #ffffff;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 2px;
-    padding: 5px 15px;
-    margin-left: 5px;
-}
-
-.button:hover {
-    cursor: pointer;
-    opacity: .8;
-}
-
-#user {
-    float: right;
-}
-
-#content {
-    margin-top: 40px;
-}
-
-#content ul {
-    padding: 0
-}
-
-#left {
-    width: 35%;
-    float: left;
-}
-
-#right {
-    width: 65%;
-    float: right;
-}
-
-#head {
-    width: 100px;
-    height: 100px;
 }
