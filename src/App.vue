@@ -1,16 +1,13 @@
 <template>
   <div id="app">
-    <v-todo-list />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import TodoList from './components/TodoList'
+import Main from './components/Main'
 export default {
-  name: 'app',
-  components: {
-    "v-todo-list": TodoList
-  }
+  name: 'app'
 }
 </script>
 

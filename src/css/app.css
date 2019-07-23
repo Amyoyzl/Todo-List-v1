@@ -116,3 +116,23 @@ ol li .delete-btn {
     height: 30px;
     margin-top: -4px;
 }
+
+#main {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #fc999b;
+    color: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 2px;
+    padding: 5px 15px;
+    margin-left: 5px;
+}
+
+.button:hover {
+    cursor: pointer;
+    opacity: .8;
+}
