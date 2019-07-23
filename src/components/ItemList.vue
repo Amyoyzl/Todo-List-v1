@@ -18,13 +18,13 @@ export default {
   },
   computed: {
     items() {
-      return this.$store.state.items;
+      return this.$store.getters.items;
     }
   },
   methods: {
     showItems(item) {
-      let showAll = this.$store.state.showAll;
-      return showAll ? true : (this.$store.state.showActive ? !item.isChecked : item.isChecked);
+      let showAll = this.$store.getters.showAll;
+      return showAll ? true : (this.$store.getters.showActive ? !item.isChecked : item.isChecked);
     }
   },
 };
