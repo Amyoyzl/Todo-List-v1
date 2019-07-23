@@ -5,8 +5,8 @@
       :class="{checked: item.isChecked}"
       @dblclick="editable=true"
       :contenteditable="editable"
-      ref="info"
-      @keydown.enter="update"
+      :value="item.content"
+      @keydown.enter="update($event.target)"
     >{{ item.content }}</span>
     <button class="delete-btn" @click="deleteItem">delete</button>
   </div>
@@ -18,20 +18,21 @@ export default {
   props: ["item"],
   data() {
     return {
-      editable: false
+      editable: false,
     };
   },
   methods: {
-    update() {
+    update(element) {
       this.editable = false;
-      this.item.content = this.$refs.info.innerHTML;
+      const newItem = Object.assign(this.item);
+      newItem.content = element.innerHTML;
+      this.$store.dispatch('updateTodo', newItem);
     },
     deleteItem() {
       this.$store.dispatch('deleteTodo', this.item.id);
     },
     check(checked) {
       const newItem = Object.assign(this.item);
-      // const newItem = Object.assign({}, this.item, { isChecked: checked })
       newItem.isChecked = checked;
       this.$store.dispatch('updateTodo', newItem);
     }

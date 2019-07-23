@@ -6,7 +6,7 @@
       <h4 class="col-lg-1">{{ $store.getters.user }}</h4>
     </div>
     <dir class="row mt-5">
-      <ul class="col-lg-5 list-group">
+      <ul class="col-lg-3 list-group">
         <li class="list-group-item">
           <router-link to="/todoList">TodoList</router-link>
         </li>
@@ -14,7 +14,7 @@
           <router-link to="/mine">我的</router-link>
         </li>
       </ul>
-      <div class="col-lg-7">
+      <div class="col-lg-9">
         <router-view></router-view>
       </div>
     </dir>
