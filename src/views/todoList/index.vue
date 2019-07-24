@@ -1,5 +1,5 @@
 <template>
-  <div id="todo-list">
+  <div>
     <v-header />
     <v-add-item />
     <br>

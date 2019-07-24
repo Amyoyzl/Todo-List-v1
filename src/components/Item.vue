@@ -1,6 +1,12 @@
 <template>
   <div id="item">
-    <input type="checkbox" class="done-todo" :checked="item.isChecked" @input="check($event.target.checked)" />
+    <a-checkbox
+      type="checkbox"
+      class="done-todo"
+      :checked="item.isChecked"
+      @input="check($event.target.checked)"
+      :style="{marginRight: '20px'}"
+    />
     <span
       :class="{checked: item.isChecked}"
       @dblclick="editable=true"
@@ -8,7 +14,7 @@
       :value="item.content"
       @keydown.enter="update($event.target)"
     >{{ item.content }}</span>
-    <button class="delete-btn" @click="deleteItem">delete</button>
+    <a-button id="deleteBtn" @click="deleteItem">X</a-button>
   </div>
 </template>
 
@@ -18,7 +24,7 @@ export default {
   props: ["item"],
   data() {
     return {
-      editable: false,
+      editable: false
     };
   },
   methods: {
@@ -26,15 +32,15 @@ export default {
       this.editable = false;
       const newItem = Object.assign(this.item);
       newItem.content = element.innerHTML;
-      this.$store.dispatch('updateTodo', newItem);
+      this.$store.dispatch("updateTodo", newItem);
     },
     deleteItem() {
-      this.$store.dispatch('deleteTodo', this.item.id);
+      this.$store.dispatch("deleteTodo", this.item.id);
     },
     check(checked) {
       const newItem = Object.assign(this.item);
       newItem.isChecked = checked;
-      this.$store.dispatch('updateTodo', newItem);
+      this.$store.dispatch("updateTodo", newItem);
     }
   }
 };

@@ -1,12 +1,15 @@
 <template>
-  <div class="container">
-    <div class="input-group mb-3 w-50">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon3">请输入姓名：</span>
-      </div>
-      <input type="text" class="form-control" v-model="userName" />
-    </div>
-    <router-link class="btn btn-success btn-sm" to="/home">开始使用</router-link>
+  <div align="middle">
+    <a-row type="flex" justify="center" align="middle">
+      <a-col :span="4">
+        <img id="head" src="@/assets/head.jpg"/>
+        <a-input-search placeholder="请输入姓名" v-model="userName" size="large">
+          <a-button slot="enterButton">
+            <router-link to="/home">开始使用</router-link>
+          </a-button>
+        </a-input-search>
+      </a-col>
+    </a-row>
   </div>
 </template>
 

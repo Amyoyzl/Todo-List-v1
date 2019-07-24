@@ -2,19 +2,9 @@
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
-    margin-top: 60px;
-}
-
-body {
-    font: normal normal 13px/16px "Open Sans", sans-serif;
-    background: #ccc;
-}
-
-#todo-list {
-    padding: 20px;
-    background: white;
-    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background: #f0f2f5;
 }
 
 .input-text {
@@ -105,11 +95,10 @@ input[type=checkbox].done-todo {
     margin: 5px 5px 2px 0;
 }
 
-ol li .delete-btn {
-    float: right;
-    color: white;
-    border-radius: 5px;
-    background: black;
-    height: 30px;
-    margin-top: -4px;
+#head {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 30vh;
+    margin-bottom: 5vh;
 }

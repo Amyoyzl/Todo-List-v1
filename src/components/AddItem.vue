@@ -1,7 +1,8 @@
 <template>
-  <div id="addItem">
-    <input class="input-text" type="text" v-model="itemContent" @keydown.enter="add" />
-    <div id="button" @click="add">Add</div>
+  <div>
+    <a-input-search placeholder="input todo content" v-model="itemContent" @keydown.enter="add" size="large">
+      <a-button  @click="add" slot="enterButton">Add</a-button>
+    </a-input-search>
   </div>
 </template>
 
@@ -20,7 +21,7 @@ export default {
           isChecked: false,
           content: this.itemContent
         };
-        this.$store.dispatch('addTodo', item);
+        this.$store.dispatch("addTodo", item);
         this.itemContent = "";
       } else {
         alert("nothing add");
