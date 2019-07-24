@@ -7,23 +7,13 @@
     },
     {
       "id": 2,
-      "isChecked": false,
+      "isChecked": true,
       "content": "22"
     },
     {
       "id": 3,
       "isChecked": true,
       "content": "33"
-    },
-    {
-      "isChecked": false,
-      "id": 4,
-      "content": "44"
-    },
-    {
-      "isChecked": true,
-      "content": "55",
-      "id": 5
     },
     {
       "isChecked": false,

@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <div class="row">
-      <button class="btn btn-secondary btn-sm col-lg-1" @click="toMain">返回</button>
-      <div class="col-lg-10"></div>
-      <h4 class="col-lg-1">{{ $store.getters.user }}</h4>
+      <router-link class="btn btn-secondary btn-sm col-lg-1" to="/">返回</router-link>
+      <div class="col-lg-8"></div>
+      <h4 class="col-lg-2">姓名：{{ $store.getters.user }}</h4>
     </div>
     <dir class="row mt-5">
       <ul class="col-lg-3 list-group">
@@ -24,13 +24,11 @@
 <script>
 export default {
   name: "home",
-  methods: {
-    toMain() {
-      let sure = confirm("确认返回？");
+  beforeRouteLeave (to, from, next) {
+    let sure = confirm("确认返回？");
       if (sure == true) {
-        this.$router.push("/");
+        next();
       }
-    }
   }
 };
 </script>

@@ -1,16 +1,18 @@
+import types from './mutationType'
+
 const mutations = {
-    changeShowAll: (state, all) => {
+    [types.CHANGE_SHOW_ALL]: (state, all) => {
         state.showAll = all;
     },
-    changeShowActive: (state, active) => {
+    [types.CHANGE_SHOW_ACTIVE]: (state, active) => {
         state.showActive = active;
     },
-    loadItems: (state, items) => {
+    [types.LOAD_ITEMS]: (state, items) => {
         state.items = items;
     },
-    setUser: (state, user) => {
+    [types.SET_USER]: (state, user) => {
         state.user = user;
     }
 }
 
-export default mutations;
+export default mutations

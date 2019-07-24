@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import Header from "./Header.vue";
-import AddItem from "./AddItem.vue";
-import ItemList from "./ItemList.vue";
-import Filters from "./Filters.vue";
+import Header from "@/components/Header";
+import AddItem from "@/components/AddItem.vue";
+import ItemList from "@/components/ItemList.vue";
+import Filters from "@/components/Filters.vue";
 export default {
   name: "TodoList",
   components: {

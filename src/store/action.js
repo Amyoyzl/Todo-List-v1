@@ -1,21 +1,24 @@
-import axios from 'axios';
+import types from './mutationType';
+import { addTodo, getTodos, putTodo, deleteTodo } from '@/apis/todo'
 
-const baseUrl = "http://localhost:3001/todos"
-
-const actions = {
-    getTodos({ commit }) {
-        axios.get(baseUrl).then(response => commit('loadItems', response.data));
+export default {
+    async loadTodos({ commit }) {
+        const result = await getTodos();
+        commit(types.LOAD_ITEMS, result.data);
     },
-    addTodos({ dispatch }, item) {
-        axios.post(baseUrl, item)
-            .then(() => dispatch('getTodos'));
+    async addTodo({ commit }, item) {
+        await addTodo(item);
+        const result = await getTodos();
+        commit(types.LOAD_ITEMS, result.data);
     },
-    updateTodo({ dispatch }, item) {
-        axios.put(`${baseUrl}/${item.id}`, item).then(() => dispatch('getTodos'));
+    async deleteTodo({ commit }, id) {
+        await deleteTodo(id);
+        const result = await getTodos();
+        commit(types.LOAD_ITEMS, result.data);
     },
-    deleteTodo({ dispatch }, id) {
-        axios.delete(`${baseUrl}/${id}`).then(() => dispatch('getTodos'));
+    async updateTodo({ commit }, item) {
+        await putTodo(item.id, item);
+        const result = await getTodos();
+        commit(types.LOAD_ITEMS, result.data);
     }
 }
-
-export default actions;

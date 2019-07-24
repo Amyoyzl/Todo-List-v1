@@ -11,21 +11,21 @@
 
 <script>
 import Item from "./Item.vue"
-import { mapState, mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 export default {
   name: "ItemList",
   components: {
     "v-item": Item
   },
-  computed: mapState ({
-      items: state => state.items
-  }),
-  mounted() {
-    this.getItems()
+  computed: {
+    ...mapGetters(['items']),
+  },
+  mounted(){
+    this.getItems();
   },
   methods: {
     ...mapActions({
-      getItems: 'getTodos'
+      getItems: 'loadTodos'
     }),
     showItems(item) {
       let showAll = this.$store.getters.showAll;

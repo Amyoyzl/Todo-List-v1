@@ -1,26 +1,25 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Main from '../components/Main'
-import Home from '../components/Home'
-import TodoList from '../components/TodoList'
-import Mine from '../components/Mine'
+import Main from '@/views/main/index'
+import Home from '@/views/home/index'
+import Mine from '@/views/home/Mine'
+import TodoList from '@/views/todoList/index'
 
 Vue.use(VueRouter)
 
 const routes = [{
         path: '/',
-        component: Main
+        component: Main,
+        name: 'main'
     },
     {
         path: '/home',
+        name: 'home',
         component: Home,
         children: [{
-                path: '/',
-                redirect: '/todoList'
-            },
-            {
                 path: '/todoList',
-                component: TodoList
+                component: TodoList,
+                alias: '/'
             },
             {
                 path: '/mine',
@@ -31,5 +30,6 @@ const routes = [{
 ]
 
 export default new VueRouter({
+    mode: 'history',
     routes
 })

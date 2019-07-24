@@ -8,18 +8,8 @@ export default {
   props: ["method"],
   methods: {
     filter(method) {
-      if (method == "All") {
-        this.$store.commit("changeShowAll", true);
-      } 
-      else {
-        this.$store.commit("changeShowAll", false);
-      }
-      if (method == "Active") {
-        this.$store.commit("changeShowActive", true);
-      } 
-      else {
-        this.$store.commit("changeShowActive", false);
-      }
+      this.$store.commit("CHANGE_SHOW_ALL", method == "All" ? true : false);
+      this.$store.commit("CHANGE_SHOW_ACTIVE", method == "Active" ? true : false);
     }
   }
 };

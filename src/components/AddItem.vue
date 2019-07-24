@@ -20,7 +20,7 @@ export default {
           isChecked: false,
           content: this.itemContent
         };
-        this.$store.dispatch('addTodos', item);
+        this.$store.dispatch('addTodo', item);
         this.itemContent = "";
       } else {
         alert("nothing add");

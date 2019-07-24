@@ -6,7 +6,7 @@
       </div>
       <input type="text" class="form-control" v-model="userName" />
     </div>
-    <button class="btn btn-success btn-sm" @click="toHome">开始使用</button>
+    <router-link class="btn btn-success btn-sm" to="/home">开始使用</router-link>
   </div>
 </template>
 
@@ -18,11 +18,9 @@ export default {
       userName: ""
     };
   },
-  methods: {
-    toHome() {
-      this.$store.commit("setUser", this.userName);
-      this.$router.push("/home");
-    }
+  beforeRouteLeave(to, from, next) {
+    this.$store.commit("SET_USER", this.userName);
+    next();
   }
 };
 </script>
